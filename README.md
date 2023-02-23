@@ -1,1 +1,1 @@
-# peanubudget-infrastructure
+# PeanuBudget: Infrastructure
