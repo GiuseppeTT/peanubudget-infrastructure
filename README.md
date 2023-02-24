@@ -12,6 +12,9 @@ If you want to **understand the infrastructure**, check the `main.tf` file.
 
 If you want to **understand the big picture**, check the [index repository](https://github.com/GiuseppeTT/peanubudget).
 
+If you are new to Terraform, the [Get Started - Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started) tutorial from HashiCorp (be sure to read the [Store Remote State
+](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-remote) section) is a great place to start.
+
 ## How to ...
 
 ### ... Set up the project using devcontainer
