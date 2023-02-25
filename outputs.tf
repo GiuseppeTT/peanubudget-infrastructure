@@ -34,3 +34,18 @@ output "container_registry_fqdn" {
   value       = azurerm_container_registry.this.login_server
   description = "The container registry's FQND"
 }
+
+output "kubernetes_name" {
+  value       = azurerm_kubernetes_cluster.this.name
+  description = "The kubernetes cluster's name"
+}
+
+output "kubernetes_ip" {
+  value       = azurerm_public_ip.this.ip_address
+  description = "The kubernetes cluster's IP (for load balancer)"
+}
+
+output "kubernetes_fqdn" {
+  value       = azurerm_public_ip.this.fqdn
+  description = "The kubernetes cluster's FQDN (for load balancer)"
+}
