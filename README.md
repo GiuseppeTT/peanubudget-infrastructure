@@ -29,6 +29,8 @@ You can quickly set up the project for development using [Dev Containers](https:
 
 After that, the project will be all set up.
 
+> **Note:** You may need to rebuild the container if you change the `.env` file. You can do that with the `Dev Containers: Rebuild Container Without Cache` command from the command palette (press `F1` key).
+
 > **Note:** You may need to install [docker](https://www.docker.com/) first.
 
 > **Note:** You can check more instructions on the [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers).
