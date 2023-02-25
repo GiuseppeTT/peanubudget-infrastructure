@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository holds the source code for the infrastructure of the PeanuBudget project. The infrastructure is hosted at Azure and is set up with Terraform. It's deployment is done with GitHub Actions.
+This repository holds the source code for the infrastructure of the PeanuBudget project. The infrastructure is hosted at Azure and is set up with Terraform. Its deployment is done with GitHub Actions.
 
 You can find more information about the PeanuBudget project at the [index repository](https://github.com/GiuseppeTT/peanubudget).
 
@@ -17,7 +17,7 @@ If you are new to Terraform, the [Get Started - Azure](https://developer.hashico
 
 ## How to ...
 
-### ... Set up the project using devcontainer
+### ... Set up the project using Dev Containers
 
 You can quickly set up the project for development using [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) by following these steps in VSCode:
 
@@ -41,7 +41,7 @@ There is no manual deployment. The infrastructure is automatically deployed to A
 
 ### ... Perform local operations
 
-There is a list of useful scripts for local operations in the `script/` folder. Assuming you are at the project root folder, you can execute the script `script-name.sh` with the `. script/script-name.sh` command.
+There is a list of useful scripts for local operations in the `script/` folder. Assuming you are at the project root folder, you can execute the script `script-name.sh` with the `. script/script-name.sh` command. Just make sure to read the script file before executing it as there may be additional instructions.
 
 ## Repository structure
 
