@@ -35,6 +35,11 @@ output "container_registry_fqdn" {
   description = "The container registry's FQND"
 }
 
+output "image_name" {
+  value       = "${var.prefix}-backend"
+  description = "The image's name (for backend)"
+}
+
 output "kubernetes_name" {
   value       = azurerm_kubernetes_cluster.this.name
   description = "The kubernetes cluster's name"

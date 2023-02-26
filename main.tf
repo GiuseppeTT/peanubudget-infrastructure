@@ -80,6 +80,13 @@ resource "azurerm_kubernetes_cluster" "this" {
   }
 }
 
+resource "azurerm_role_assignment" "example" {
+  principal_id                     = azurerm_kubernetes_cluster.this.kubelet_identity[0].object_id
+  role_definition_name             = "AcrPull"
+  scope                            = azurerm_container_registry.this.id
+  skip_service_principal_aad_check = true
+}
+
 resource "azurerm_public_ip" "this" {
   name                = "${var.prefix}-public-ip-address-kubernetes-load-balancer"
   resource_group_name = azurerm_kubernetes_cluster.this.node_resource_group
