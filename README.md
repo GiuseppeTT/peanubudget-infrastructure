@@ -60,5 +60,6 @@ There is a list of useful scripts for local operations in the `script/` folder. 
 ├── README.md            # This very file you are reading
 ├── main.tf              # Terraform's code for cloud resources
 ├── outputs.tf           # Terraform's code for outputs
+├── terraform.tf         # Terraform's code for configurations (providers and workspace)
 └── variables.tf         # Terraform's code for variables (input)
 ```
