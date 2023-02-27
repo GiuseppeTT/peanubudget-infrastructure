@@ -62,3 +62,36 @@ resource "azurerm_container_registry" "this" {
   sku                 = "Standard"
   admin_enabled       = true
 }
+
+resource "azurerm_kubernetes_cluster" "this" {
+  name                = "${var.prefix}-kubernetes-cluster"
+  location            = azurerm_resource_group.this.location
+  resource_group_name = azurerm_resource_group.this.name
+  dns_prefix          = var.prefix
+
+  default_node_pool {
+    name       = "default"
+    node_count = 1
+    vm_size    = "Standard_DS2_v2"
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
+resource "azurerm_role_assignment" "example" {
+  principal_id                     = azurerm_kubernetes_cluster.this.kubelet_identity[0].object_id
+  role_definition_name             = "AcrPull"
+  scope                            = azurerm_container_registry.this.id
+  skip_service_principal_aad_check = true
+}
+
+resource "azurerm_public_ip" "this" {
+  name                = "${var.prefix}-public-ip-address-kubernetes-load-balancer"
+  resource_group_name = azurerm_kubernetes_cluster.this.node_resource_group
+  location            = azurerm_resource_group.this.location
+  allocation_method   = "Static"
+  domain_name_label   = var.prefix
+  sku                 = "Standard"
+}
