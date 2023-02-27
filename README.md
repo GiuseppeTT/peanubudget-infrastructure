@@ -48,11 +48,11 @@ There is a list of useful scripts for local operations in the `script/` folder. 
 ```
 .
 ├── .devcontainer/       # Devcontainer's files
-├── .git/                # [Git ignored] [Auto generated] Git files
+├── .git/                # [Git ignored] [Auto generated] Git's files
 ├── .github/workflows/   # GitHub Actions's workflows (CI / CD)
 ├── .terraform/          # [Git ignored] [Auto generated] Terraform's files
 ├── script/              # Useful scripts for performing local operations
-├── .env                 # [Git ignored] List of environment variables, mainly for secrets
+├── .env                 # [Git ignored] List of environment variables (mainly for secrets)
 ├── .env.example         # Example of .env file
 ├── .gitignore           # List of files ignored by git
 ├── .terraform.lock.hcl  # [Auto generated] Terraform's lock file
