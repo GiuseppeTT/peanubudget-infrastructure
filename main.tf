@@ -59,7 +59,7 @@ resource "azurerm_container_registry" "this" {
   name                = replace("${var.prefix}-container-registry", "-", "")
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
-  sku                 = "Standard"
+  sku                 = "Basic"
   admin_enabled       = true
 }
 
@@ -69,10 +69,16 @@ resource "azurerm_kubernetes_cluster" "this" {
   resource_group_name = azurerm_resource_group.this.name
   dns_prefix          = var.prefix
 
+  network_profile {
+    network_plugin    = "kubenet"
+    load_balancer_sku = "basic"
+  }
+
   default_node_pool {
-    name       = "default"
-    node_count = 1
-    vm_size    = "Standard_B2s"
+    name            = "default"
+    node_count      = 1
+    vm_size         = "Standard_B2s"
+    os_disk_size_gb = 32
   }
 
   identity {
@@ -93,5 +99,5 @@ resource "azurerm_public_ip" "this" {
   location            = azurerm_resource_group.this.location
   allocation_method   = "Static"
   domain_name_label   = var.prefix
-  sku                 = "Standard"
+  sku                 = "Basic"
 }
